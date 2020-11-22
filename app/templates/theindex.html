@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Palkkaa Iida</title>
+</head>
+
+<body>
+    <h1>Check package description</h1>
+    <section class="pkg-btns">
+        {% for i in range(1, content[0]|length) %}
+        <button class="beauty-btn" id="{{i}}" onClick="reply_click(this.id)">
+            {{content[0][i]}}
+        </button>
+        {% endfor %}
+    </section>
+
+    <section class="grid-right" id="pkg-content">
+        {% for i in range(1, content[0]|length) %}
+        <div class="hide" id="{{'info' + i|string}}">
+            <div class="modal">
+                <div class="modal-content">
+                    <div class="depends">
+                        <h3>Depends</h3>
+                        {% if content[1][i][0] != "" %}
+                        {% for dep in content[1][i] %}
+                        <button class="beauty-btn">{{dep}}</button>
+                        {% endfor %}
+                        {% else %}
+                        <p>-</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="description">
+                        <h3>Description</h3>
+                        {% if content[2][i] != "" %}
+                        <p>{{content[2][i]}}</p>
+                        {% else %}
+                        <p>-</p>
+                        {% endif %}
+                    </div>
+                    <button class="beauty-btn close" onclick="closeModal()">C L O S E</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+
+    <script type="text/javascript">
+        function reply_click(clicked_id) {
+            let idOfElement = "info" + clicked_id;
+            var showToHide = document.getElementsByClassName("show");
+            for (var x = 0; x < showToHide.length; x++) {
+                showToHide[x].className = "hide";
+            }
+            document.getElementById(idOfElement).className = "show";
+
+        }
+
+        function closeModal() {
+            var showToHide = document.getElementsByClassName("show");
+            for (var x = 0; x < showToHide.length; x++) {
+                showToHide[x].className = "hide";
+            }
+        }
+
+        window.onclick = function (event) {
+            console.log(event.target.className)
+            if (event.target.className == "modal") {
+                closeModal()
+            }
+        }
+    </script>
+</body>
+
+</html>

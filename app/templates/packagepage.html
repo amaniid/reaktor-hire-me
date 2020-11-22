@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <title>Palkkaa Iida</title>
+</head>
+
+<body>
+    <a class="beauty-btn close" href="{{ url_for('home')}}">GO BACK</a>
+    <section>
+        <h1>{{ name }}</h1>
+        <div class="depends">
+            <h3>Depends</h3>
+            {% if depends[0] != "" %}
+            {% for dep in depends %}
+            <button class="beauty-btn">{{dep}}</button>
+            {% endfor %}
+            {% else %}
+            <p>-</p>
+            {% endif %}
+        </div>
+
+        <div class="description">
+            <h3>Description</h3>
+            {% if description != "" %}
+            <p>{{description}}</p>
+            {% else %}
+            <p>-</p>
+            {% endif %}
+        </div>
+    </section>
+    <a class="beauty-btn close" href="{{ url_for('home') }}">GO BACK</a>
+
+
+    <script type="text/javascript">
+        function reply_click(clicked_id) {
+            let idOfElement = "info" + clicked_id;
+            var showToHide = document.getElementsByClassName("show");
+            for (var x = 0; x < showToHide.length; x++) {
+                showToHide[x].className = "hide";
+            }
+            document.getElementById(idOfElement).className = "show";
+
+        }
+
+        function closeModal() {
+            var showToHide = document.getElementsByClassName("show");
+            for (var x = 0; x < showToHide.length; x++) {
+                showToHide[x].className = "hide";
+            }
+        }
+
+        window.onclick = function (event) {
+            console.log(event.target.className)
+            if (event.target.className == "modal") {
+                closeModal()
+            }
+        }
+    </script>
+</body>
+
+</html>
