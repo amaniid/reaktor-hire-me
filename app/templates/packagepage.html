@@ -16,7 +16,10 @@
             <h3>Depends</h3>
             {% if depends[0] != "" %}
             {% for dep in depends %}
-            <button class="beauty-btn">{{dep}}</button>
+            <!-- <button class="beauty-btn">{{dep}}</button> -->
+            <a class="beauty-btn" href="{{ url_for('package',pkgname=dep) }}">
+                {{dep}}
+            </a>
             {% endfor %}
             {% else %}
             <p>-</p>
