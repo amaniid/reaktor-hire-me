@@ -5,16 +5,16 @@ from .read_status import readstatusfile
 app = Flask(__name__)
 
 
-# @app.before_first_request
-# def get_data():
-#     global pkgs
-#     pkgs = readstatusfile()
+@app.before_first_request
+def get_data():
+    global pkgs
+    pkgs = readstatusfile()
 
 
 @app.route("/")
 def home():
-    return render_template("404.html")
-    # return render_template("homepage.html", content=pkgs)
+    # return render_template("404.html")
+    return render_template("homepage.html", content=pkgs)
 
 @app.route('/package/' + b'<pkgname>'.decode('utf-8'), methods=['GET'])
 def package(pkgname):
