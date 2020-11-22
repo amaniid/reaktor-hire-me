@@ -1,14 +1,14 @@
 from flask import Flask, redirect, url_for, render_template
-import .read_status
+from .read_status import readstatusfile
 
 
 app = Flask(__name__)
 
 
-@app.before_first_request
-def get_data():
-    global pkgs
-    pkgs = read_status.readstatusfile()
+# @app.before_first_request
+# def get_data():
+#     global pkgs
+#     pkgs = readstatusfile()
 
 
 @app.route("/")
