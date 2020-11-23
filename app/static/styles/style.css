@@ -177,3 +177,49 @@ footer {
     margin-bottom: 0;
     text-align: right;
 }
+
+
+/* MEDIA QUERIES */
+@media (max-width:765px) {
+    .contact {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    #pkg-search {
+        width: 100%;
+        font-size: 1rem;
+        padding: 10px 5px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    .quote {
+        font-size: 1.5rem;
+        text-align: left;
+        margin: 2px;
+        border: 5px dashed deeppink;
+        padding: 5px;
+    }
+
+    .intro {
+        font-size: 1.2rem;
+        text-align: left;
+        margin: 2px;
+        width: 100%;
+        border: 1px dashed deeppink;
+        padding: 5px;
+    }
+
+    .paragraph {
+        width: 100%;
+        padding: 1rem;
+        margin: 2rem 1rem;
+    }
+
+    .pkg-btns {
+        padding: 4px;
+        width: 100%;
+        line-height: 35px;
+    }
+}
