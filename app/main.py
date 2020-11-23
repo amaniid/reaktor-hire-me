@@ -15,8 +15,18 @@ def get_data():
 
 @app.route("/")
 def home():
-    return render_template("homepage.html", content=pkgs)
-    #return render_template("homepage.html", content=map(json.dumps, pkgs))
+    return render_template("index.html", mydata=pkgs)
+
+
+@app.route("/cv")
+def cv():
+    return render_template("cv.html")
+
+
+@app.route("/cover-letter")
+def cover_letter():
+    return render_template("cover-letter.html")
+
 
 @app.route('/package/' + b'<pkgname>'.decode('utf-8'), methods=['GET'])
 def package(pkgname):

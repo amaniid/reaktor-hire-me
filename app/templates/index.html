@@ -1,5 +1,58 @@
-{% extends "base.html"%}
-{% block title %}Home Page{% endblock %}
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
 {% block content %}
-<h1>test</h1>
+
+<h1>Check package description</h1>
+<section class="pkg-btns" id="pkgs">
+    <div class="search">
+        <label for="gsearch">Search packages:</label>
+        <br />
+        <input type="search" name="pkg-search" id="pkg-search" onkeyup="findPkg()" placeholder="*package name*">
+        <br />
+        <div id="results">
+
+        </div>
+    </div>
+
+    {% for i in range(0, mydata[0]|length) %}
+    <a class="beauty-btn" id="{{i}}" href="{{ url_for('package',pkgname=mydata[0][i]) }}">
+        {{mydata[0][i]}}
+    </a>
+    {% endfor %}
+</section>
+
+{% endblock %}
+
+{% block myjs %}
+<script type="text/javascript">
+    var dataFromMe = {{ mydata[0] | safe }}
+
+    document.getElementById('pkg-search').innerText = "";
+
+    function findPkg() {
+        // Declare variables
+        var input, filter, i;
+
+        input = document.getElementById('pkg-search');
+        filter = input.value.toLowerCase();
+
+        const matching = dataFromMe.filter(name => name.includes(filter));
+        // console.log(matching);
+
+        if (matching.length > 50) {
+            document.getElementById("results").innerHTML = "<p>More than 50 matches...</p>";
+            return
+        }
+
+        document.getElementById("results").innerHTML = "";
+
+        for (i = 0; i < matching.length; i++) {
+            document.getElementById("results").innerHTML +=
+                "<a class='match-btn' href='package/" +
+                encodeURIComponent(matching[i]) +
+                "'>" + matching[i] + "</a>";
+
+        }
+    }
+</script>
 {% endblock %}

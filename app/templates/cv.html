@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}CV{% endblock %}
+{% block content %}
+<div class="cv">
+    <h1>Curriculum Vitae</h1>
+    <section class="contact">
+        <div>
+            <h2>CONTACT INFORMATION</h2>
+            <ul>
+                <li>Iida Louhikoski</li>
+                <li>21.03.1993</li>
+                <li>HELSINKI</li>
+                <li>+358 45 78318 666</li>
+            </ul>
+            <p class="intro">Logical and creative person looking for my place in IT. Web development, data engineering,
+                UI/UX,
+                <em>who</em> can decide?<br /><br />
+                Analytical but not machine-like, dilligent but relaxed.
+            </p>
+        </div>
+        <div class="cv-picture">
+            <img src="{{ url_for('static', filename = 'images/iida.png') }}" alt="picture of an iida" height="333"
+                width="333">
+        </div>
+
+    </section>
+
+    <section class="paragraph">
+        <h2>WORK EXPERIENCE</h2>
+        <b>Data Analyst, Saldo Finance 12/2018-04/2020</b>
+        <p>
+            Modeling and assessing risks. Cleaning and improving data and tables.
+            Planning and executing automated reporting template for model validation and monitoring.
+        </p>
+        <br />
+        <b>Assistant, University of Oulu Faculty of Medicine 5/2016 – 05/2017</b>
+        <p>
+            Worked for Northern Finland Birth Cohort by doing data entry from Excel files, and
+            making algorithms, plotting and analysis on R.
+        </p>
+        <br />
+        <p class="sidenote">
+            I have also received money from planting trees, being an au pair, helping in a reindeer farm with tourists,
+            art
+            modeling...
+        </p>
+    </section>
+
+    <section class="paragraph">
+        <h2>EDUCATION</h2>
+        <b>University of Oulu, Finland</b>
+        <p>
+            Master of Science studies, Statistics, 2018
+        </p>
+        <p>
+            • Master’s Thesis: Modelling BMI growth curves using penalized cubic splines
+        </p>
+        <br />
+        <p>
+            Bachelor of Natural Science 2016
+        </p>
+        <p>
+            • Major: Statistics, Minor: Mathematics (60 ECTS), Information Processing Science (25 ECTS).
+        </p>
+    </section>
+
+    <section class="paragraph">
+        <h2>MISC</h2>
+        <p>
+            I was a part of a team of three that won international statistical poster competition hosted by ISLP
+            (International Statistical Literacy Project) in 2010-2011.
+        </p>
+        <p>
+            I have been a tutor for freshmen twice during my university studies (in 2014 and 2017).
+        </p>
+        <p>
+            I was the secretary of my guild’s (Sigma) board in 2015.
+        </p>
+        <p>
+            I was a graphic designer/production editor in my guild’s magazine for a year.
+        </p>
+    </section>
+</div>
+
+
+{% endblock %}
