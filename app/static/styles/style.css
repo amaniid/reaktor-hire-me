@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-a {
+/* a {
     text-decoration: none;
     border: pink 2px solid;
     margin-right: 0.4rem;
@@ -20,10 +20,9 @@ a:hover, a:focus {
     border: black 1px solid;
     background-color: deeppink;
     color: oldlace;
-}
+} */
 
 ul {
-    padding-bottom: 1.5rem;
     list-style-type: none;
 }
 
@@ -31,16 +30,33 @@ ul {
 
 .beauty-btn {
     color: deeppink;
+    text-decoration: none;
+    border: pink 2px solid;
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem;
+    background-color: oldlace;
+}
+
+.beauty-btn:hover, .beauty-btn:focus, .match-btn:hover, .match-btn:focus {
+    border: black 1px solid;
+    background-color: deeppink;
+    color: oldlace;
 }
 
 .match-btn {
     background-color: aquamarine;
     color: black;
+    text-decoration: none;
+    border: pink 2px solid;
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem;
 }
 
 .pkg-btns {
     padding: 3rem;
-    max-width: 1000px;
+    max-width: 1200px;
     line-height: 35px;
 }
 
@@ -73,7 +89,7 @@ ul {
 
 .cv {
     display: grid;
-    max-width: 1500px;
+    max-width: 1200px;
 }
 
 .cv h1 {
@@ -99,6 +115,10 @@ ul {
     padding: 1rem;
     margin: 2rem 1rem;
     border: 3px solid black;
+}
+
+.paragraph ul {
+    list-style-type: disc;
 }
 
 .sidenote {
@@ -142,30 +162,56 @@ ul {
 
 /* navigation / header */
 header {
-    width: 100%;
+    /* width: 100%; */
     margin-bottom: 5px;
+    max-width: 1200px;
 }
 
-header #menu-top-bar {
+header .top-bar {
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-header #menu-top-bar li a {
+/* header .top-bar li a {
     padding: 0 1rem;
-    background-color: lightpink;
-    color: black;
-    border: 2px solid grey;
+
 }
 
-header #menu-top-bar li:first-child a {
+header .top-bar li:first-child a {
     padding-left: 1rem;
 }
 
-header #menu-top-bar li:last-child a {
+header .top-bar li:last-child a {
     padding-right: 1rem;
+} */
+
+.menu-link {
+    text-decoration: none;
+    border: pink 2px solid;
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem;
+    background-color: lightpink;
+    color: black;
+}
+
+.menu-link:hover, .menu-link:focus {
+    border: black 1px solid;
+    background-color: deeppink;
+    color: oldlace;
+}
+
+.menu-icon {
+    margin-right: 0.4rem;
+    margin-top: 0.4rem;
+    padding: 0.3rem;
+    color: deeppink;
+}
+
+.menu-icon:hover, .menu-icon:focus {
+    color: black;
 }
 
 /* FOOTER */

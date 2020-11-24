@@ -5,15 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>{% block title %}{% endblock %} - Hire an Iida</title>
 </head>
 
 <body>
     <header>
-        <ul id="menu-top-bar" class="nav navbar-nav">
-            <li class="menu-item nav-item"><a href="{{ url_for('home') }}"><span>PACKAGE STUFF</span></a></li>
-            <li class="menu-item nav-item"><a href="{{ url_for('cv') }}"><span>CV</span></a></li>
-            <li class="menu-item nav-item"><a href="{{ url_for('cover_letter') }}"><span>COVER LETTER</span></a></li>
+        <ul id="menu-top-bar" class="top-bar">
+            <li class="menu-item nav-item"><a class="menu-link" href="{{ url_for('home') }}"><span>PACKAGE STUFF</span></a></li>
+            <li class="menu-item nav-item"><a class="menu-link" href="{{ url_for('cv') }}"><span>CV</span></a></li>
+            <li class="menu-item nav-item"><a class="menu-link" href="{{ url_for('cover_letter') }}"><span>COVER LETTER</span></a></li>
+        </ul>
+        <ul id="menu-top-bar-icon" class="top-bar">
+            <li class="menu-item nav-item"><a class="menu-icon" href="https://github.com/amaniid"><i class="fa fa-github fa-2x"></i></a></li>
+            <li class="menu-item nav-item"><a class="menu-icon" href="https://www.linkedin.com/in/iida-louhikoski"><i class="fa fa-linkedin fa-2x"></i></a></li>
         </ul>
     </header>
     {% block content %}

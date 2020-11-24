@@ -44,6 +44,11 @@
             return
         }
 
+        if (matching.length === 0) {
+            document.getElementById("results").innerHTML = "<p>No matches.</p>";
+            return
+        }
+
         document.getElementById("results").innerHTML = "";
 
         for (i = 0; i < matching.length; i++) {
