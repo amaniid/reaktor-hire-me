@@ -102,8 +102,6 @@ header .top-bar {
 }
 
 .depends {
-    display: flex;
-    flex-wrap: wrap;
     max-width: 500px;
     margin-bottom: 1rem;
 }
