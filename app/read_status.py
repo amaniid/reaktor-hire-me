@@ -91,9 +91,9 @@ def readstatusfile():
     dependsplit = []
 
     for dep in dependlist:
-        dep = dep.replace("\|(.*?)(?=\,)", "")
-        dep = dep.replace("\|.*$", "")
         dep = dep.replace(" ", "")
+        dep = re.sub("\|(.*?)(?=\,)", "", dep)
+        dep = re.sub("\|.*$", "", dep)
         dep = dep.replace("Depends:", "")
         dep = dep.replace(":any", "")
         dependsplit.append(re.sub(r'\([^)]*\)', '', dep).split(','))
