@@ -27,7 +27,7 @@
 
 {% block myjs %}
 <script type="text/javascript">
-    var dataFromMe = {{ mydata[0] | safe }}
+    var dataFromMe = {{ mydata[0]|safe }}
 
     document.getElementById('pkg-search').innerText = "";
 
@@ -37,6 +37,8 @@
 
         input = document.getElementById('pkg-search');
         filter = input.value.toLowerCase();
+
+        console.log(dataFromMe[60])
 
         const matching = dataFromMe.filter(name => name.includes(filter));
         // console.log(matching);

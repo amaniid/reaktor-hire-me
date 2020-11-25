@@ -4,6 +4,11 @@ from flask import Markup
 
 
 def readstatusfile():
+    """
+    Returns all the downloaded package names, descriptions and dependencies
+    in a list of lists.
+    """
+
     pkg_names = []
 
     with open("/var/lib/dpkg/status", encoding="utf8") as f:
@@ -14,7 +19,7 @@ def readstatusfile():
                 pkg_names.append(pkg_name.replace("\n", ""))
 
     # with the saved package names, we can scan through
-    # the whole doc
+    # the whole file again !
     dependlines = ""
     dependlist = []
     after_depends = ("pre-depends:", "recommends:", "suggests:", "enhances:",
@@ -22,8 +27,8 @@ def readstatusfile():
                      "description:", "conffiles:", "package:")
     read_depend = False
 
-    desclist = []
     desclines = ""
+    desclist = []
     after_description = ("homepage:", "original-maintainer:", "package:")
 
     read_description = False
@@ -31,6 +36,7 @@ def readstatusfile():
     pkg_iterator = -1
     pkg_cnt = len(pkg_names)
 
+    # getting all the dependencies and descriptions package by package
     with open("/var/lib/dpkg/status", "rt", encoding="utf8") as f:
         # contents = f.read()
         for line in f:
@@ -77,9 +83,11 @@ def readstatusfile():
     for x in range(pkg_cnt - len(desclist)):
         desclist.append("")
 
+    # sanity checking
     # print(pkg_names[666:699])
     # print(dependlist[666:699])
 
+    # to make formating more presentable
     dependsplit = []
 
     for dep in dependlist:
@@ -111,4 +119,9 @@ def readstatusfile():
     # with open('test.json', 'w') as fout:
     #     json.dump(makejson, fout)
 
-    return [pkg_names, dependsplit, descsplit]
+    resultlist = [pkg_names, dependsplit, descsplit]
+    # alphabetical order:
+    resultlist = list(zip(*sorted(zip(*resultlist))))
+    resultlist = [list(elem) for elem in resultlist]
+
+    return resultlist

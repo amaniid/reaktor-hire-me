@@ -2,7 +2,6 @@ import json
 from flask import Flask, redirect, url_for, render_template
 from .read_status import readstatusfile
 
-
 app = Flask(__name__)
 
 

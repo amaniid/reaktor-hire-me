@@ -98,6 +98,7 @@ header .top-bar {
     padding: 1rem 2rem;
     border-radius: 6px;
     margin-bottom: 3rem;
+    max-width: 800px;
 }
 
 .depends {
