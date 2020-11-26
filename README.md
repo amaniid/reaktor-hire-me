@@ -3,6 +3,8 @@ Assignment done for Spring 2021 junior dev position in Reaktor. Flask App, that 
 
 This assignment was originally for the Autumn 2020 position. I wasn't then ready to apply, but I did most of the task. And I can't find the assignment itself anymore, but I suppose this has most features in place.
 
+Is currently hosted on reaktor-hire-me.herokuapp.com .
+
 ## Setting up
 ### Clone repository (Linux)
 Open terminal and navigate to directory of your choice. 
