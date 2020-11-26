@@ -1,9 +1,1 @@
 __pycache__/
-app/images/
-app/templates/cover-letter.html
-app/templates/cv.html
-Pipfile
-Pipfile.lock
-Procfile
-runtime.txt
-wsgi.py
